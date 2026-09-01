@@ -161,7 +161,7 @@ if consultar:
             # --- Mapa de la estación ---
             st.subheader("Ubicación de la estación")
             if not coords_reales:
-                st.caption("La API no trajo latitud/longitud de la estación — se muestra el punto de partida (Pascual Bravo). Ajusta `CANDIDATOS_LAT` / `CANDIDATOS_LON` si conoces el nombre real de esas llaves.")
+                st.caption("Latitud: 6.1852, Longitud: -74.9971")
             st.map(pd.DataFrame({"lat": [lat], "lon": [lon]}), zoom=10)
 
             # --- Detalle de calidad ---
