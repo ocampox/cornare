@@ -115,7 +115,7 @@ def calcular_indice_calidad(df):
 # ------------------------------------------------------------------
 # Sidebar — parámetros de la consulta (editables por cada estudiante)
 # ------------------------------------------------------------------
-st.sidebar.header("Parámetros de tu consulta")
+st.sidebar.header("Parámetros")
 codigo_estacion = "36"
 fecha_desde = st.sidebar.date_input("Desde", pd.to_datetime("2026-08-23")).strftime("%Y-%m-%d")
 fecha_hasta = st.sidebar.date_input("Hasta", pd.to_datetime("2026-08-30")).strftime("%Y-%m-%d")
