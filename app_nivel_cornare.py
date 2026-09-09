@@ -117,7 +117,7 @@ st.sidebar.header("Parámetros de tu consulta")
 codigo_estacion = "28"
 fecha_desde = st.sidebar.date_input("Desde", pd.to_datetime("2026-08-23")).strftime("%Y-%m-%d")
 fecha_hasta = st.sidebar.date_input("Hasta", pd.to_datetime("2026-08-30")).strftime("%Y-%m-%d")
-calidad = 1
+calidad = "1"
 consultar = st.sidebar.button("🔍 Consultar", type="primary")
 
 st.title("🌊 Nivel de ríos y quebradas — San Carlos, Río San Carlos")
