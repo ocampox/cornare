@@ -13,6 +13,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import urllib3
+import plotly.express as px
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -158,6 +159,31 @@ if consultar:
             # --- Gráfico de la serie ---
             st.subheader("Serie de nivel")
             st.line_chart(df.set_index("fecha")["nivel"])
+
+            # --- Análisis de Distribución (Boxplot e Histograma) ---
+            st.subheader("Análisis Estadístico de Distribución")
+            col_box, col_hist = st.columns(2)
+
+            with col_box:
+                fig_box = px.box(
+                    df,
+                    y="nivel",
+                    points="all",
+                    title="Diagrama de Caja (Boxplot) — Detección de Outliers",
+                    labels={"nivel": "Nivel (m)"}
+                )
+                st.plotly_chart(fig_box, use_container_width=True)
+
+            with col_hist:
+                fig_hist = px.histogram(
+                    df,
+                    x="nivel",
+                    nbins=20,
+                    title="Distribución de Frecuencia de Niveles",
+                    labels={"nivel": "Nivel (m)"},
+                    color_discrete_sequence=["#1f77b4"]
+                )
+                st.plotly_chart(fig_hist, use_container_width=True)
 
             # --- Mapa de la estación ---
             st.subheader("Ubicación de la estación")
