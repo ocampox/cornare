@@ -162,7 +162,7 @@ if consultar:
             # --- Mapa de la estación ---
             st.subheader("Ubicación de la estación")
             if not coords_reales:
-                st.caption(f"Latitud: {LAT_DEFECTO}, Longitud: {LON_DEFECTO} (Valores por defecto)")
+                st.caption(f"Latitud: {LAT_DEFECTO}, Longitud: {LON_DEFECTO}")
             st.map(pd.DataFrame({"lat": [lat], "lon": [lon]}), zoom=10)
 
             # --- Detalle de calidad ---
