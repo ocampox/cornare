@@ -169,7 +169,7 @@ if consultar:
                     df,
                     y="nivel",
                     points="all",
-                    title="Diagrama de Caja (Boxplot) — Detección de Outliers",
+                    title="Boxplot — Detección de Outliers",
                     labels={"nivel": "Nivel (m)"}
                 )
                 st.plotly_chart(fig_box, use_container_width=True)
