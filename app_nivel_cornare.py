@@ -36,7 +36,7 @@ st.set_page_config(page_title="Nivel de estación — CORNARE", page_icon="🌊"
 # ------------------------------------------------------------------
 # Funciones de consulta
 # ------------------------------------------------------------------
-def obtener_serie_nivel(codigo_estacion, desde, hasta, calidad=1, timeout=30):
+def obtener_serie_nivel(codigo_estacion, desde, hasta, =1, timeout=30):
     url = f"{API_BASE_URL}/{codigo_estacion}/nivel"
     params = {"desde": desde, "hasta": hasta, "calidad": calidad}
     headers = {
@@ -117,7 +117,7 @@ st.sidebar.header("Parámetros de tu consulta")
 codigo_estacion = "28"
 fecha_desde = st.sidebar.date_input("Desde", pd.to_datetime("2026-08-23")).strftime("%Y-%m-%d")
 fecha_hasta = st.sidebar.date_input("Hasta", pd.to_datetime("2026-08-30")).strftime("%Y-%m-%d")
-calidad = st.sidebar.selectbox("Calidad", [1, 0], index=0, help="1 = solo datos validados")
+calidad = 1
 consultar = st.sidebar.button("🔍 Consultar", type="primary")
 
 st.title("🌊 Nivel de ríos y quebradas — San Carlos, Río San Carlos")
